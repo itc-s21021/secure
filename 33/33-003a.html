@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+</head>
+<body>
+<script>
+  var req = new XMLHttpRequest();
+  req.open('POST', 'http://localhost:8080/api33/33-004a.php');
+  req.setRequestHeader('content-type', 'application/json');
+  data = '{"zipcode" : "100-0100"}';
+  req.onreadystatechange = function() {
+      if (req.readyState == 4 && req.status == 200) {
+        alert(req.responseText);
+      }
+  };
+  req.send(data);
+</script>
+送信しました
+</body>

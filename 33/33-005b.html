@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+</head>
+<body>
+  <script>
+    var req = new XMLHttpRequest();
+    req.open('GET', 'http://localhost:8080/api33/33-006b.php');
+    req.withCredentials = true;
+    req.onreadystatechange = function() {
+      if (req.readyState === 4 && req.status === 200) {
+        var span = document.getElementById('counter');
+        span.textContent = req.responseText;
+      }
+    };
+    req.send(null);
+  </script>
+  呼び出しカウンター：<span id="counter"></span>
+</body>
+</html>
+
