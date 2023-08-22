@@ -1,6 +1,5 @@
 <?php
   session_start();
-  // ログイン確認…省略
 ?>
 <body>
 <form action="45-003.php" method="POST">

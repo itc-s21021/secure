@@ -1,9 +1,9 @@
 <?php
-  function ex($s) { // XSS対策用のHTMLエスケープと表示関数
+  function ex($s) { 
     echo htmlspecialchars($s, ENT_COMPAT, 'UTF-8');
   }
   session_start();
-  $id = @$_SESSION['id']; // ユーザIDの取り出し
+  $id = @$_SESSION['id']; 
   $msg = filter_input(INPUT_POST, 'msg');
   $token = filter_input(INPUT_POST, 'token');
   if (empty($token) || $token !== $_SESSION['token'])

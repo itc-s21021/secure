@@ -1,4 +1,4 @@
-<?php // ログインしたことにする確認用のスクリプト
+<?php 
   session_start();
   $id = filter_input(INPUT_GET, 'id');
   if (empty($id)) $id = 'yamada';

@@ -7,7 +7,7 @@
     header('Location: 45-001.php');
     exit;
   }
-  $id = @$_SESSION['id']; // ユーザIDの取り出し
+  $id = @$_SESSION['id']; 
   if (empty($_SESSION['token'])) {
     $token = bin2hex(openssl_random_pseudo_bytes(24));
     $_SESSION['token'] = $token; 

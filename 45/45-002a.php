@@ -1,10 +1,9 @@
 <?php
   session_start();
-  // ログイン確認…省略
-  if (empty($_SESSION['token'])) { // トークンが空なら生成
+  if (empty($_SESSION['token'])) { 
     $token = bin2hex(openssl_random_pseudo_bytes(24));
     $_SESSION['token'] = $token;
-  } else {  // トークンがもともとあればそれを使う
+  } else {  
     $token = $_SESSION['token'];
   }
 ?><body>

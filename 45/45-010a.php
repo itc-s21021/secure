@@ -1,10 +1,10 @@
 <?php
-  function ex($s) { // XSS対策用のHTMLエスケープと表示関数
+  function ex($s) { 
     echo htmlspecialchars($s, ENT_COMPAT, 'UTF-8');
   }
   header('X-Frame-Options: deny');
   session_start();
-  $id = @$_SESSION['id']; // ユーザIDの取り出し
+  $id = @$_SESSION['id']; 
   if (empty($_SESSION['token'])) {
     $token = bin2hex(openssl_random_pseudo_bytes(24));
     $_SESSION['token'] = $token; 

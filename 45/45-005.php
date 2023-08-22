@@ -1,15 +1,13 @@
 <?php
-  function ex($s) { // XSS対策用のHTMLエスケープと表示関数
+  function ex($s) { 
     echo htmlspecialchars($s, ENT_COMPAT, 'UTF-8');
   }
   session_start();
-  $id = @$_SESSION['id']; // ユーザIDの取り出し
-  // ログイン確認…省略
+  $id = @$_SESSION['id']; 
   $tmpfile = $_FILES["imgfile"]["tmp_name"];
   $tofile = $_FILES["imgfile"]["name"];
   if (! is_uploaded_file($tmpfile)) {
     die('ファイルがアップロードされていません');
-  // 画像を img ディレクトリに移動
   } else  if (! move_uploaded_file($tmpfile, "img/$tofile")) {
     die('ファイルをアップロードできません');
   }
